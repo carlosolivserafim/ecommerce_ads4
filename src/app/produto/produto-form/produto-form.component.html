@@ -1,0 +1,62 @@
+<form id="form-cadastro">
+    <div class="row">
+        <div class="col-md-10"><h3>Cadastro de Produto</h3></div>
+        <div class="col-md-2 text-end">
+            <button id="salvar" name="salvar" type="button" class="btn btn-success" (click)="salvar()">
+                <span class="bi bi-check"></span>
+                Salvar
+            </button>
+        </div>
+    </div>
+    <hr>
+    <div class="row ">
+        <div class="col-md-5">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome* </label>
+                <input type="text" aria-label="nome" id="nome" name="nome" [(ngModel)]="nome" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-5">
+            <div class="mb-3">
+                <label for="preco" class="form-label">Preço* </label>
+                <input type="text" aria-label="preco" id="preco" name="preco" [(ngModel)]="preco" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-10">
+            <div class="mb-3">
+                <label for="descricao" class="form-label">Descrição* </label>
+                <textarea class="form-control"  id="descricao"  name="descricao"  [(ngModel)]="descricao" style="height: 100px"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="mb-3">
+                <label for="categoria" class="form-label">Categoria: </label>
+                <select class="form-select form-select-sm form-control" aria-label="Small select example" name="categoria" [(ngModel)]="categoria" (change)="listarSubcategoria(categoria)">
+                    <option 
+                         *ngFor="let categoria of categorias" [value]="categoria.indice" [innerHTML]="categoria.descricao"
+                    ></option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5">
+            <label 
+            for="categoria" 
+            class="form-label"
+            >Subcategoria</label>
+            <select [disabled]="is_desabilidado" class="form-control form-select-sm form-control" aria-label="Small select example" [(ngModel)]="subcategoria" name="subcategoria">
+                <option 
+                    *ngFor="let subcategoria of subcategorias" [value]="subcategoria.indice" [innerHTML]="subcategoria.descricao"
+                ></option>
+            </select>
+        </div>
+    </div>
+</form>
+

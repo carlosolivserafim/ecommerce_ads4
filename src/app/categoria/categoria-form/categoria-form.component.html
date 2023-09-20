@@ -1,0 +1,20 @@
+<form>
+    <div class="row">
+        <div class="col-md-10"><h3>Cadastro</h3></div>
+        <div class="col-md-2 text-end">
+            <button id="salvar" name="salvar" type="button" class="btn btn-success" (click)="salvar()">
+                <span class="bi bi-check"></span>
+                Salvar
+            </button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="input-group">
+                <span class="input-group-text">Descrição</span>
+                <input type="text" aria-label="descricao" [(ngModel)]="descricao" id="descricao" name="descricao" class="form-control">
+            </div>
+        </div>
+    </div>
+</form>
